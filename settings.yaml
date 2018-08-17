@@ -1,0 +1,19 @@
+QtumSignService:
+    Db:
+        LogsConnString:
+            settings-key: "QtumSignService-LogsConnString"
+            types:
+                - AzureBlobStorage
+                - Tag
+MonitoringServiceClient:
+    MonitoringServiceUrl:
+        settings-key: MonitoringServiceUrl 
+
+SlackNotifications:
+    AzureQueue:
+        ConnectionString:
+            settings-key: SlackNotificationsConnString
+            types:
+                - AzureTableStorage
+        QueueName:
+            settings-key: SlackQueueName
