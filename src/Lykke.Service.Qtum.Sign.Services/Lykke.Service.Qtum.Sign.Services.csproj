@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssemblyName>Lykke.Service.Qtum.Sign.Services</AssemblyName>
+    <RootNamespace>Lykke.Service.Qtum.Sign.Services</RootNamespace>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lykke.Service.Qtum.Sign.Core\Lykke.Service.Qtum.Sign.Core.csproj" />
+  </ItemGroup>
+</Project>
