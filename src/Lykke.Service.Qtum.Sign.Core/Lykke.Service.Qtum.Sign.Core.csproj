@@ -6,10 +6,7 @@
     <Version>1.0.0</Version>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Domain\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Lykke.Common" Version="7.0.2" />
+    <PackageReference Include="NBitcoin" Version="4.0.0.51" />
   </ItemGroup>
 </Project>
