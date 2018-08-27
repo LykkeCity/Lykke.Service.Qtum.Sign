@@ -1,6 +1,5 @@
 ﻿using Lykke.Service.Qtum.Sign.Core.Services;
 using Lykke.Service.Qtum.Sign.Models;
-using Lykke.Service.Qtum.Sign.Utils;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -22,7 +21,7 @@ namespace Lykke.Service.Qtum.Sign.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState.ToErrorResponse());
+                return BadRequest(ModelState);
             }
 
             var hex = _qtumService.SignTransaction(request.Tx, request.Coins, request.Keys);

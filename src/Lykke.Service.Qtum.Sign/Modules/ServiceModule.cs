@@ -1,4 +1,6 @@
 ﻿using Autofac;
+using Lykke.Service.Qtum.Sign.Core.Services;
+using Lykke.Service.Qtum.Sign.Services;
 using Lykke.Service.Qtum.Sign.Settings;
 using Lykke.SettingsReader;
 
@@ -15,7 +17,10 @@ namespace Lykke.Service.Qtum.Sign.Modules
 
         protected override void Load(ContainerBuilder builder)
         {
-            // Do not register entire settings in container, pass necessary settings to services which requires them
+            builder.RegisterType<QtumService>()
+                .As<IQtumService>()
+                .SingleInstance()
+                .WithParameter("network", _appSettings.Nested(s => s.Network).CurrentValue);
         }
     }
 }

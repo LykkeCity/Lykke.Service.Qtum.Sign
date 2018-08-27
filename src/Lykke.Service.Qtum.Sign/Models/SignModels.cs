@@ -37,18 +37,20 @@ namespace Lykke.Service.Qtum.Sign.Models
                     $"{nameof(PrivateKeys)} array can not be empty",
                     new[] { nameof(PrivateKeys) }));
             }
-
-            var num = 0;
-            foreach (var key in PrivateKeys)
+            else
             {
-                if (!qtumService.IsValidPrivateKey(key))
+                var num = 0;
+                foreach (var key in PrivateKeys)
                 {
-                    result.Add(new ValidationResult(
-                        $"{nameof(PrivateKeys)}.[{num}] is not a valid", 
-                        new[] { nameof(PrivateKeys) }));
-                }
+                    if (!qtumService.IsValidPrivateKey(key))
+                    {
+                        result.Add(new ValidationResult(
+                            $"{nameof(PrivateKeys)}.[{num}] is not a valid",
+                            new[] { nameof(PrivateKeys) }));
+                    }
 
-                num++;
+                    num++;
+                }
             }
 
             if (Tx == null && Coins == null)

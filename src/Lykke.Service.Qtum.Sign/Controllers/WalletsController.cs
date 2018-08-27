@@ -1,6 +1,7 @@
 ﻿using Lykke.Service.Qtum.Sign.Core.Services;
 using Lykke.Service.Qtum.Sign.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace Lykke.Service.Qtum.Sign.Controllers
 {
@@ -15,6 +16,7 @@ namespace Lykke.Service.Qtum.Sign.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(typeof(WalletResponse), (int)HttpStatusCode.OK)]
         public WalletResponse Post()
         {
             var privateKey = _qtumService.GetPrivateKey();
