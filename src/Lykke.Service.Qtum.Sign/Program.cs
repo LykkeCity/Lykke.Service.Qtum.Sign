@@ -1,5 +1,9 @@
-﻿using Lykke.Sdk;
+﻿using System;
+using System.IO;
 using System.Threading.Tasks;
+using Lykke.Sdk;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.PlatformAbstractions;
 
 namespace Lykke.Service.Qtum.Sign
 {
