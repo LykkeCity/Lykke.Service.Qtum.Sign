@@ -8,5 +8,7 @@
   <ItemGroup>
     <PackageReference Include="Lykke.Common" Version="7.0.3" />
     <PackageReference Include="NBitcoin" Version="4.0.0.51" />
+    <Folder Include="Domain\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 </Project>
