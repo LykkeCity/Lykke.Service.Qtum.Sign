@@ -5,6 +5,9 @@ QtumSignService:
             types:
                 - AzureBlobStorage
                 - Tag
+Network:
+    settings-key: "QtumSignService-Network"
+    
 MonitoringServiceClient:
     MonitoringServiceUrl:
         settings-key: MonitoringServiceUrl 
