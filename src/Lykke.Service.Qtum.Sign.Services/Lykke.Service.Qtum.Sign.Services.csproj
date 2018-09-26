@@ -6,7 +6,7 @@
     <Version>1.0.0</Version>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NBitcoin.Qtum" Version="1.0.4" />
+    <PackageReference Include="NBitcoin.Qtum" Version="1.1.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Lykke.Service.Qtum.Sign.Core\Lykke.Service.Qtum.Sign.Core.csproj" />

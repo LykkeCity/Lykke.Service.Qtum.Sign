@@ -17,14 +17,14 @@ namespace Lykke.Service.Qtum.Sign.Tests
 {
     public class QtumServiceTests
     {
-        public Network network = QtumNetworks.Testnet;
+        public static Network network = QtumNetworks.Instance.Testnet;
         public string from = "qSsbGREwMFvV4dtjgid3tMgvz5Hw2YVcbp";
         public string fromPrivateKey = "cSJ8DmmYHuMCTPz9HUU5xwSKubcfiY6moa1LcUgBMj8FRvG1TgtW";
         public BitcoinAddress fromAddress;
         public Key fromKey;
         public string to = "qKEtj1SUuvGRYLzXto9R2hjVryfQavPyJ1";
         public BitcoinAddress toAddress;
-        public Transaction prevTx = Transaction.Parse("0200000001ab6b46efb237046e1e609544d1ec250724b853eb8e87e41741e2484ebcc935ac010000006a4730440220447b115517b6ef94b5168c126f1028ae4de9622ed65b88f66d015ecdd1404f39022002a4b2dfc855a21d5a256fe4aa59e77d097a017e02a9beeda566c92522aa8ee8012102988f67b90c13b967d537c2473e05a0c6aaf6ed4fa1272c982a8ed6523b0b2893feffffff020050d6dc010000001976a914662aba77ea81b5d9f3f61c040097564f8c33efe688ac4e2e9151560000001976a91411be0b5052608566cd35e44599ff7d166c5c105088acd4160300");
+        public Transaction prevTx = Transaction.Parse("0200000001ab6b46efb237046e1e609544d1ec250724b853eb8e87e41741e2484ebcc935ac010000006a4730440220447b115517b6ef94b5168c126f1028ae4de9622ed65b88f66d015ecdd1404f39022002a4b2dfc855a21d5a256fe4aa59e77d097a017e02a9beeda566c92522aa8ee8012102988f67b90c13b967d537c2473e05a0c6aaf6ed4fa1272c982a8ed6523b0b2893feffffff020050d6dc010000001976a914662aba77ea81b5d9f3f61c040097564f8c33efe688ac4e2e9151560000001976a91411be0b5052608566cd35e44599ff7d166c5c105088acd4160300", network);
         public TransactionBuilder txBuilder = new TransactionBuilder();
         public Transaction tx;
         public ICoin[] spentCoins;
@@ -81,7 +81,7 @@ namespace Lykke.Service.Qtum.Sign.Tests
         {
             // Act
             var signedTransactionHex = service.SignTransaction(tx, spentCoins, new[] { fromKey });
-            var signedTx = Transaction.Parse(signedTransactionHex);
+            var signedTx = Transaction.Parse(signedTransactionHex, network);
 
             // Assert
             Assert.True(new TransactionBuilder()
