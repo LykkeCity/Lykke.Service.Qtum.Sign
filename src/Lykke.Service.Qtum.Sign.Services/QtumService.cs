@@ -13,8 +13,6 @@ namespace Lykke.Service.Qtum.Sign.Services
 
         public QtumService(string network)
         {
-            QtumNetworks.Register();
-
             _network = Network.GetNetwork(network);
         }
 

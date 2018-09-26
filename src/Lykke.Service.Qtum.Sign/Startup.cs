@@ -9,6 +9,7 @@ using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
+using NBitcoin.Qtum;
 
 namespace Lykke.Service.Qtum.Sign
 {
@@ -70,6 +71,7 @@ namespace Lykke.Service.Qtum.Sign
         [UsedImplicitly]
         public void Configure(IApplicationBuilder app)
         {
+            QtumNetworks.Instance.EnsureRegistered();
             app.UseLykkeConfiguration(options =>
             {
                 options.SwaggerOptions = _swaggerOptions;
